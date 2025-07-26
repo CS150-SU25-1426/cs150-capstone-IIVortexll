@@ -14,10 +14,7 @@ public:
     Item(string name = "", int quantity = 0);
     string getName() const;
     int getQuantity() const;
-
-    void setName(string name);
     void setQuantity(int quantity);
-
     bool operator==(const Item& other) const;
     friend ostream& operator<<(ostream& out, const Item& item);
 };
