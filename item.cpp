@@ -1,23 +1,31 @@
 #include "Item.h"
 
-Item::Item(std::string n, int q) {
-    name = n;
-    quantity = q;
+Item::Item(string name, int quantity) {
+    m_name = name;
+    m_quantity = quantity;
 }
 
-std::string Item::getName() const {
-    return name;
+string Item::getName() const {
+    return m_name;
 }
 
 int Item::getQuantity() const {
-    return quantity;
+    return m_quantity;
+}
+
+void Item::setName(string name) {
+    m_name = name;
+}
+
+void Item::setQuantity(int quantity) {
+    m_quantity = quantity;
 }
 
 bool Item::operator==(const Item& other) const {
-    return name == other.name && quantity == other.quantity;
+    return m_name == other.m_name && m_quantity == other.m_quantity;
 }
 
-std::ostream& operator<<(std::ostream& out, const Item& item) {
-    out << "Item: " << item.name << ", Quantity: " << item.quantity;
+ostream& operator<<(ostream& out, const Item& item) {
+    out << "Item [" << item.m_name << ", Quantity: " << item.m_quantity << "]";
     return out;
 }
