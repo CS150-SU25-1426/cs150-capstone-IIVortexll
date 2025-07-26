@@ -1,4 +1,4 @@
-#include "Item.h"
+#include "item.h"
 
 Item::Item(string name, int quantity) {
     m_name = name;
@@ -11,10 +11,6 @@ string Item::getName() const {
 
 int Item::getQuantity() const {
     return m_quantity;
-}
-
-void Item::setName(string name) {
-    m_name = name;
 }
 
 void Item::setQuantity(int quantity) {
